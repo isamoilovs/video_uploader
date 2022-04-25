@@ -52,7 +52,7 @@ def thumbnails(file, timeline_step, output_vtt_file_name):
     print('Создаем Thumbnails. Подождите...')
     path = r'.'
     os.chdir(path)
-    vidcap = cv2.VideoCapture(path+'\\'+file)
+    vidcap = cv2.VideoCapture(os.path.abspath(path)+'/'+file)
     fps = vidcap.get(cv2.CAP_PROP_FPS)
     time_line_step = timeline_step
     total_frames = vidcap.get(cv2.CAP_PROP_FRAME_COUNT)
